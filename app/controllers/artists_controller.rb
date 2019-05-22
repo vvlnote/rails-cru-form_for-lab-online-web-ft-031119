@@ -19,4 +19,10 @@ class ArtistsController < ApplicationController
   def show
     @artist = Artist.find(params[:id])
   end
+  
+  private 
+  
+  def post_params(*args)
+    
+  end
 end
