@@ -1,2 +1,2 @@
-class Artist < ApplicationRecord
+class Artist < ApplicationRecord::Base
 end
