@@ -5,7 +5,8 @@ class ArtistsController < ApplicationController
   end
   
   def create
-    
+    @artist = Artist.create(post_params(:name, :bio))
+    redirect_to
   end
   
   def edit
@@ -23,6 +24,6 @@ class ArtistsController < ApplicationController
   private 
   
   def post_params(*args)
-    
+    params.require(:artist).permit(*args)
   end
 end
