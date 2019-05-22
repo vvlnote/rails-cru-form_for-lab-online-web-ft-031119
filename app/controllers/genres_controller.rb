@@ -5,7 +5,7 @@ class GenresController < ApplicationController
   end
   
   def create
-    
+    @genre = Genre.new
   end
   
   def edit
@@ -18,6 +18,12 @@ class GenresController < ApplicationController
   
   def show
     @genre = Genre.find(params[:id])
+  end
+  
+  private
+  
+  def post_genre(*args)
+    params.require(:genre).permit(*args)
   end
 
 end
